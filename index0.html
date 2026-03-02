@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unique Fashion & Cosmetics BD</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#000;color:#fff}
+header{background:#111;padding:20px;text-align:center;position:sticky;top:0}
+h1{color:gold;margin:0}
+nav{margin-top:10px}
+nav a{color:gold;margin:0 10px;text-decoration:none;font-weight:bold}
+.hero{padding:60px 20px;text-align:center}
+.hero h2{color:gold;font-size:32px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:40px}
+.card{background:#111;padding:15px;border-radius:10px;text-align:center;border:1px solid gold;position:relative}
+.card img{width:100%;border-radius:10px}
+.badge{position:absolute;top:10px;left:10px;background:red;color:white;padding:5px 8px;font-size:12px;border-radius:5px}
+button{background:gold;color:black;border:none;padding:8px 12px;margin-top:8px;cursor:pointer;font-weight:bold;border-radius:5px}
+button:hover{background:orange}
+.section{padding:40px;text-align:center}
+.section h2{color:gold}
+.cart-btn{position:absolute;right:20px;top:20px;background:gold;color:black;padding:8px 12px;border-radius:5px;cursor:pointer}
+#cartModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8)}
+.cart-content{background:#111;width:90%;max-width:500px;margin:60px auto;padding:20px;border-radius:10px;border:1px solid gold}
+footer{background:#111;text-align:center;padding:20px}
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:16px;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Unique Fashion & Cosmetics BD</h1>
+<div class="cart-btn" onclick="openCart()">Cart (<span id="cartCount">0</span>)</div>
+<nav>
+<a href="#shop">Shop</a>
+<a href="#about">About</a>
+<a href="#policy">Policy</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Premium Fashion & 100% Original Cosmetics</h2>
+<p>Cash On Delivery Available All Over Bangladesh</p>
+</section>
+
+<section id="shop" class="products">
+
+<div class="card">
+<div class="badge">New</div>
+<img src="https://via.placeholder.com/300x350">
+<h3>Women Luxury Dress</h3>
+<p>৳ 2500</p>
+<button onclick="addToCart('Women Luxury Dress',2500)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x350">
+<h3>Men Premium Panjabi</h3>
+<p>৳ 1800</p>
+<button onclick="addToCart('Men Premium Panjabi',1800)">Add to Cart</button>
+</div>
+
+<div class="card">
+<div class="badge">Original</div>
+<img src="https://via.placeholder.com/300x350">
+<h3>Imported Face Serum</h3>
+<p>৳ 950</p>
+<button onclick="addToCart('Imported Face Serum',950)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x350">
+<h3>Matte Lipstick Set</h3>
+<p>৳ 1200</p>
+<button onclick="addToCart('Matte Lipstick Set',1200)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x350">
+<h3>Stylish Handbag</h3>
+<p>৳ 1500</p>
+<button onclick="addToCart('Stylish Handbag',1500)">Add to Cart</button>
+</div>
+
+</section>
+
+<section id="about" class="section">
+<h2>About Us</h2>
+<p>Unique Fashion & Cosmetics BD is a trusted online store in Bangladesh.
+We provide premium quality fashion products and 100% original cosmetics with fast home delivery service.</p>
+</section>
+
+<section id="policy" class="section">
+<h2>Delivery & Return Policy</h2>
+<p>✔ Inside Dhaka: 2-3 Days</p>
+<p>✔ Outside Dhaka: 3-5 Days</p>
+<p>✔ Cash On Delivery Available</p>
+<p>✔ 3 Days Easy Return Policy</p>
+</section>
+
+<section class="section">
+<h2>Customer Reviews</h2>
+<p>⭐⭐⭐⭐⭐ Very good quality & trusted shop!</p>
+<p>⭐⭐⭐⭐⭐ Original cosmetics & fast delivery.</p>
+<p>⭐⭐⭐⭐⭐ Highly recommended store.</p>
+</section>
+
+<section id="contact" class="section">
+<h2>Contact Us</h2>
+<p>Phone: 01780617501</p>
+<p>WhatsApp: 01780617501</p>
+<p>Email: miraj016242372@gmail.com</p>
+<p>Facebook: <a href="https://www.facebook.com/ufbd.store/" target="_blank" style="color:gold;">Visit Our Page</a></p>
+</section>
+
+<footer>
+© 2026 Unique Fashion & Cosmetics BD | All Rights Reserved
+</footer>
+
+<div id="cartModal">
+<div class="cart-content">
+<h2>Your Cart</h2>
+<div id="cartItems"></div>
+<h3>Total: ৳ <span id="totalPrice">0</span></h3>
+<button onclick="checkout()">Checkout on WhatsApp</button>
+<button onclick="closeCart()">Close</button>
+</div>
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/8801780617501" target="_blank">Chat</a>
+
+<script>
+let cart=[];
+
+function addToCart(name,price){
+let item=cart.find(p=>p.name===name);
+if(item){item.qty++}else{cart.push({name:name,price:price,qty:1})}
+updateCart();
+}
+
+function updateCart(){
+document.getElementById("cartCount").innerText=cart.reduce((a,b)=>a+b.qty,0);
+let total=0;
+let html="";
+cart.forEach(item=>{
+total+=item.price*item.qty;
+html+=`<p>${item.name} x ${item.qty} = ৳ ${item.price*item.qty}</p>`;
+});
+document.getElementById("cartItems").innerHTML=html;
+document.getElementById("totalPrice").innerText=total;
+}
+
+function openCart(){document.getElementById("cartModal").style.display="block"}
+function closeCart(){document.getElementById("cartModal").style.display="none"}
+
+function checkout(){
+if(cart.length===0){alert("Cart is empty");return;}
+let message="Hello, I want to order:%0A%0A";
+cart.forEach(item=>{
+message+=item.name+" x "+item.qty+" = ৳ "+(item.price*item.qty)+"%0A";
+});
+message+="%0ATotal: ৳ "+document.getElementById("totalPrice").innerText;
+window.open("https://wa.me/8801780617501?text="+message,"_blank");
+}
+</script>
+
+</body>
+</html>
