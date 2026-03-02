@@ -12,17 +12,26 @@ body{
     background:#f5f5f5;
 }
 
+/* ===== Header ===== */
 header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
     background:black;
     color:white;
     padding:20px;
-    text-align:center;
+}
+
+header img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
 }
 
 header h1{
     margin:0;
-    font-size:32px;
-    letter-spacing:2px;
+    font-size:28px;
 }
 
 header p{
@@ -31,7 +40,7 @@ header p{
     color:gold;
 }
 
-/* ===== Banner Section ===== */
+/* ===== Banner ===== */
 .banner{
     background:url('https://images.unsplash.com/photo-1520975922203-bf5c2c8f6e6c');
     background-size:cover;
@@ -68,7 +77,6 @@ header p{
     font-size:18px;
 }
 
-/* Button */
 .btn{
     display:inline-block;
     padding:14px 30px;
@@ -80,7 +88,7 @@ header p{
     border-radius:6px;
 }
 
-/* Products Section */
+/* ===== Products ===== */
 .section{
     padding:60px 20px;
     text-align:center;
@@ -106,6 +114,7 @@ header p{
     border-radius:10px;
 }
 
+/* ===== Footer ===== */
 footer{
     background:black;
     color:white;
@@ -124,8 +133,11 @@ footer{
 <body>
 
 <header>
+<img src="https://scontent.fdac146-1.fna.fbcdn.net/v/t39.30808-6/626302830_122095513185259988_4632063666901689634_n.jpg">
+<div>
 <h1>Unique Fashion BD</h1>
 <p>Fashion & Cosmetics Store</p>
+</div>
 </header>
 
 <div class="banner">
@@ -141,20 +153,23 @@ footer{
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-<h3>Trendy Dress</h3>
-<p>Latest Fashion Collection</p>
+<h3>Stylish Panjabi</h3>
+<p>Price: 1490৳</p>
+<a class="btn" href="https://wa.me/8801780617501?text=I%20want%20to%20order%20Stylish%20Panjabi%20from%20Unique%20Fashion%20BD">Order Now</a>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
-<h3>Cosmetics</h3>
-<p>Original Beauty Products</p>
+<h3>Luxury Makeup Kit</h3>
+<p>Price: 990৳</p>
+<a class="btn" href="https://wa.me/8801780617501?text=I%20want%20to%20order%20Luxury%20Makeup%20Kit%20from%20Unique%20Fashion%20BD">Order Now</a>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-<h3>Skincare</h3>
-<p>Glow & Shine Everyday</p>
+<h3>Premium Skincare Set</h3>
+<p>Price: 1290৳</p>
+<a class="btn" href="https://wa.me/8801780617501?text=I%20want%20to%20order%20Premium%20Skincare%20Set%20from%20Unique%20Fashion%20BD">Order Now</a>
 </div>
 
 </div>
