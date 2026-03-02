@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UFBD Store | Fashion & Cosmetics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#f8f8f8;
+}
+
+header{
+background:black;
+color:white;
+padding:15px;
+text-align:center;
+font-size:22px;
+font-weight:bold;
+}
+
+.banner{
+background:linear-gradient(to right,#ff416c,#ff4b2b);
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+.banner h1{
+margin:0;
+font-size:28px;
+}
+
+.banner p{
+margin-top:10px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:15px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.card h3{
+margin:10px 0 5px;
+}
+
+.card p{
+color:#e91e63;
+font-weight:bold;
+}
+
+button{
+background:black;
+color:white;
+padding:10px;
+border:none;
+width:100%;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff416c;
+}
+
+.trust{
+background:white;
+padding:20px;
+text-align:center;
+}
+
+footer{
+background:black;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+UFBD Store - Fashion & Cosmetics
+</header>
+
+<section class="banner">
+<h1>Trendy Fashion & Original Cosmetics</h1>
+<p>Cash On Delivery Available All Over Bangladesh</p>
+</section>
+
+<section class="products">
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300">
+<h3>Women Luxury Dress</h3>
+<p>৳ 2500</p>
+<button onclick="orderNow('Women Luxury Dress')">Order Now</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300">
+<h3>Men Premium Panjabi</h3>
+<p>৳ 1800</p>
+<button onclick="orderNow('Men Premium Panjabi')">Order Now</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300">
+<h3>Imported Face Serum</h3>
+<p>৳ 950</p>
+<button onclick="orderNow('Imported Face Serum')">Order Now</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300">
+<h3>Matte Lipstick Set</h3>
+<p>৳ 1200</p>
+<button onclick="orderNow('Matte Lipstick Set')">Order Now</button>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300">
+<h3>Stylish Handbag</h3>
+<p>৳ 1500</p>
+<button onclick="orderNow('Stylish Handbag')">Order Now</button>
+</div>
+
+</section>
+
+<section class="trust">
+<h2>Why Choose Us?</h2>
+<p>✔ 100% Original Products</p>
+<p>✔ Cash On Delivery</p>
+<p>✔ Fast Delivery</p>
+<p>✔ Trusted Facebook Store</p>
+</section>
+
+<footer>
+Contact: 01780617501 <br>
+Email: miraj016242372@gmail.com <br>
+Facebook: https://www.facebook.com/ufbd.store/
+</footer>
+
+<a class="whatsapp" href="https://wa.me/8801780617501" target="_blank">W</a>
+
+<script>
+function orderNow(product){
+let message = "Hello, I want to order: " + product;
+window.open("https://wa.me/8801780617501?text=" + encodeURIComponent(message));
+}
+</script>
+
+</body>
+</html>
